@@ -1,0 +1,10 @@
+services:
+  discovery:
+    network_mode: host
+    image: discovery
+    volumes: 
+      - ./:/usr/src/myapp
+    # command: jar xf /usr/src/myapp/lib/simple-xml-2.6.7.jar
+    command: java Main.java 
+    # -Xlint:deprecation
+    # /usr/src/myapp/lib/evercam-java-1.0-jar-with-dependencies
