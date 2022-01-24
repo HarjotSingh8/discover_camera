@@ -31,8 +31,8 @@ public class UpnpDiscovery
 		upnpDeviceList = new ArrayList<UpnpDevice>();
 		try
 		{
-			devices = Discovery.discover(20000,
-				// Discovery.DEFAULT_TIMEOUT, 
+			devices = Discovery.discover(
+				Discovery.DEFAULT_TIMEOUT, 
 				Discovery.DEFAULT_TTL, Discovery.DEFAULT_MX, DEFAULT_DEVICE_TYPE, null);
 			System.out.println("inside upnp discovery");
 			if (devices != null)
