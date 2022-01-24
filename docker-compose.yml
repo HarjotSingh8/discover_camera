@@ -1,10 +1,19 @@
 services:
   discovery:
-    network_mode: host
+    # network_mode: host
     image: discovery
     volumes: 
       - ./:/usr/src/myapp
+    command: bash -c "
+      jar xf /usr/src/myapp/lib/simple-xml-2.6.7.jar &&
+      jar xf /usr/src/myapp/lib/evercam-java-1.0-jar-with-dependencies.jar &&
+      jar xf /usr/src/myapp/lib/upnplib-mobile.jar &&
+      javac Main.java &&
+      java Main.java" 
     # command: jar xf /usr/src/myapp/lib/simple-xml-2.6.7.jar
+    # command: jar xf /usr/src/myapp/lib/evercam-java-1.0-jar-with-dependencies.jar
+    # command: jar xf /usr/src/myapp/lib/upnplib-mobile.jar
+    # command: javac Main.java 
     command: java Main.java 
     # -Xlint:deprecation
     # /usr/src/myapp/lib/evercam-java-1.0-jar-with-dependencies
