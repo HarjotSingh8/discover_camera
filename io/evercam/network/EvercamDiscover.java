@@ -133,7 +133,7 @@ public class EvercamDiscover
 			}
 		}
 
-		activeIpList.add("203.134.200.170");
+		// activeIpList.add("203.134.200.170");
 		printLogMessage("Identifying cameras......");
 		// For each active IP, request for MAC address and vendor
 		for (int index = 0; index < activeIpList.size(); index++)

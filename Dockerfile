@@ -1,6 +1,6 @@
 FROM openjdk:11
 
-RUN apt update && apt-get install net-tools -y
+# RUN apt update && apt-get install net-tools -y
 COPY . /usr/src/myapp
 WORKDIR /usr/src/myapp
 RUN jar xf /usr/src/myapp/lib/simple-xml-2.6.7.jar && \
