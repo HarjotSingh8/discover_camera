@@ -36,7 +36,7 @@ public class EvercamDiscover
 	private String externalIp = "";
 	private boolean withDefaults = false;
 	public ExecutorService pool;
-	public static long NAT_TIMEOUT = 5000; // 5 secs
+	public static long NAT_TIMEOUT = 20000; // 5 secs
 	public static long IDENTIFICATION_TIMEOUT = 16000; // 16 secs
 	public static long QUERY_TIMEOUT = 12000; // 12 secs
 
