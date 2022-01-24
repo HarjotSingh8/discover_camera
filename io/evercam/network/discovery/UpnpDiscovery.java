@@ -31,14 +31,20 @@ public class UpnpDiscovery
 		upnpDeviceList = new ArrayList<UpnpDevice>();
 		try
 		{
-			devices = Discovery.discover(Discovery.DEFAULT_TIMEOUT, Discovery.DEFAULT_TTL,
-					Discovery.DEFAULT_MX, DEFAULT_DEVICE_TYPE, null);
+			devices = Discovery.discover(20000,
+				// Discovery.DEFAULT_TIMEOUT, 
+				Discovery.DEFAULT_TTL, Discovery.DEFAULT_MX, DEFAULT_DEVICE_TYPE, null);
+			System.out.println("inside upnp discovery");
 			if (devices != null)
 			{
+				System.out.println("devices!=null");
 				for (int i = 0; i < devices.length; i++)
-				{
+					{
+
 					if (devices[i] != null)
 					{
+						System.out.println("devices["+i+"]!=null");	
+						System.out.println("upnp result"+upnpResult);	
 						if (upnpResult != null)
 						{
 							upnpResult.onUpnpDeviceFound(new UpnpDevice(devices[i]));
@@ -50,6 +56,7 @@ public class UpnpDiscovery
 					}
 				}
 			}
+			System.out.println("devices==null");
 		}
 		catch (IOException e)
 		{

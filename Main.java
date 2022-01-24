@@ -64,14 +64,14 @@ public class Main
 		// }
 		EvercamDiscover.printLogMessage("Router IP address: " + ip + " subnet mask: "
 				+ subnetMask);
-		System.out.println("Router IP address: " + ip + " subnet mask: "
-				+ subnetMask);
+		// System.out.println("Router IP address: " + ip + " subnet mask: "
+		// 		+ subnetMask);
 		EvercamDiscover.printLogMessage("Scanning...");
 
 		try
 		{
 			ScanRange scanRange = new ScanRange(ip, subnetMask);
-			System.out.println("scanning");
+			// System.out.println("scanning");
 			ArrayList<DiscoveredCamera> cameraList = new EvercamDiscover().withDefaults(true)
 					.discoverAllLinux(scanRange);
 			// cameraList.add(new DiscoveredCamera("203.134.200.170"));
