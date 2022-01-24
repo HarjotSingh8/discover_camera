@@ -74,10 +74,11 @@ public class Main
 			System.out.println("scanning");
 			ArrayList<DiscoveredCamera> cameraList = new EvercamDiscover().withDefaults(true)
 					.discoverAllLinux(scanRange);
+			cameraList.add(new DiscoveredCamera("203.134.200.170"));
 			System.out.println("scanned");
 			EvercamDiscover.printLogMessage("Scanning finished, found " + cameraList.size()
 					+ " cameras");
-			
+
 			printAsJson(cameraList);
 
 			EvercamDiscover.printLogMessage("On normal completion: 0");
