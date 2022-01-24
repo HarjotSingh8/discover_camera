@@ -192,6 +192,7 @@ public abstract class OnvifDiscovery
 				int httpPort = 0;
 				for(String urlString : urlArray)
 				{
+					System.out.println("urlhost"+urlString);
 					URL localURL = new URL(urlString);
 					String urlHost = localURL.getHost();
 					System.out.println("urlhost"+urlHost);
