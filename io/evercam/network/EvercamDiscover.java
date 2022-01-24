@@ -422,7 +422,7 @@ public class EvercamDiscover
 				{
 					if(!scanRange.containIp(discoveredCamera.getIP()))
 					{
-						EvercamDiscover.printLogMessage("Removing ONVIF device: " + discoveredCamera.getIP());
+						EvercamDiscover.printLogMessage("ONVIF device out of search range: " + discoveredCamera.getIP());
 						// clonedList.remove(discoveredCamera);
 					}
 				}

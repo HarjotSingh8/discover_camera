@@ -18,11 +18,35 @@ import org.simpleframework.xml.core.Persister;
 import org.simpleframework.xml.stream.InputNode;
 import org.simpleframework.xml.stream.NodeBuilder;
 
+
+
+
+// import java.util.List;
+// import javax.jws.WebMethod;
+// import javax.jws.WebParam;
+// import javax.jws.WebResult;
+// import javax.jws.WebService;
+// import javax.jws.soap.SOAPBinding;
+// import javax.xml.bind.annotation.XmlSeeAlso;
+// import javax.xml.datatype.Duration;
+// import javax.xml.datatype.XMLGregorianCalendar;
+// import javax.xml.ws.Holder;
+// import javax.xml.ws.RequestWrapper;
+// import javax.xml.ws.ResponseWrapper;
+
+
+
+
+
+
+
+
+
 public abstract class OnvifDiscovery
 {
 	private static final int SOCKET_TIMEOUT = 4000;
-	// private static final String PROBE_MESSAGE = "<s:Envelope xmlns:s=\"http://www.w3.org/2003/05/soap-envelope\" xmlns:a=\"http://schemas.xmlsoap.org/ws/2004/08/addressing\"><s:Header><a:Action s:mustUnderstand=\"1\">http://schemas.xmlsoap.org/ws/2005/04/discovery/Probe</a:Action><a:MessageID>uuid:21859bf9-6193-4c8a-ad50-d082e6d296ab</a:MessageID><a:ReplyTo><a:Address>http://schemas.xmlsoap.org/ws/2004/08/addressing/role/anonymous</a:Address></a:ReplyTo><a:To s:mustUnderstand=\"1\">urn:schemas-xmlsoap-org:ws:2005:04:discovery</a:To></s:Header><s:Body><Probe xmlns=\"http://schemas.xmlsoap.org/ws/2005/04/discovery\"><d:Types xmlns:d=\"http://schemas.xmlsoap.org/ws/2005/04/discovery\" xmlns:dp0=\"http://www.onvif.org/ver10/network/wsdl\">dp0:NetworkVideoTransmitter</d:Types><d:Types xmlns:d=\"http://schemas.xmlsoap.org/ws/2005/04/discovery\" xmlns:dp0=\"http://www.onvif.org/ver10/device/wsdl/GetServices\">dp0:NetworkVideoTransmitter</d:Types></Probe></s:Body></s:Envelope>";
-	private static final String PROBE_MESSAGE = "<s:Envelope xmlns:s=\"http://www.w3.org/2003/05/soap-envelope\" xmlns:a=\"http://schemas.xmlsoap.org/ws/2004/08/addressing\"><s:Header><a:Action s:mustUnderstand=\"1\">http://schemas.xmlsoap.org/ws/2005/04/discovery/Probe</a:Action><a:MessageID>uuid:21859bf9-6193-4c8a-ad50-d082e6d296ab</a:MessageID><a:ReplyTo><a:Address>http://schemas.xmlsoap.org/ws/2004/08/addressing/role/anonymous</a:Address></a:ReplyTo><a:To s:mustUnderstand=\"1\">urn:schemas-xmlsoap-org:ws:2005:04:discovery</a:To></s:Header><s:Body><Probe xmlns=\"http://schemas.xmlsoap.org/ws/2005/04/discovery\"><d:Types xmlns:d=\"http://schemas.xmlsoap.org/ws/2005/04/discovery\" xmlns:dp0=\"http://www.onvif.org/ver10/device/wsdl/GetServices\">dp0:NetworkVideoTransmitter</d:Types></Probe></s:Body></s:Envelope>";
+	private static final String PROBE_MESSAGE = "<s:Envelope xmlns:s=\"http://www.w3.org/2003/05/soap-envelope\" xmlns:a=\"http://schemas.xmlsoap.org/ws/2004/08/addressing\"><s:Header><a:Action s:mustUnderstand=\"1\">http://schemas.xmlsoap.org/ws/2005/04/discovery/Probe</a:Action><a:MessageID>uuid:21859bf9-6193-4c8a-ad50-d082e6d296ab</a:MessageID><a:ReplyTo><a:Address>http://schemas.xmlsoap.org/ws/2004/08/addressing/role/anonymous</a:Address></a:ReplyTo><a:To s:mustUnderstand=\"1\">urn:schemas-xmlsoap-org:ws:2005:04:discovery</a:To></s:Header><s:Body><Probe xmlns=\"http://schemas.xmlsoap.org/ws/2005/04/discovery\"><d:Types xmlns:d=\"http://schemas.xmlsoap.org/ws/2005/04/discovery\" xmlns:dp0=\"http://www.onvif.org/ver10/network/wsdl\">dp0:NetworkVideoTransmitter</d:Types></Probe></s:Body></s:Envelope>";
+	// private static final String PROBE_MESSAGE = "<s:Envelope xmlns:s=\"http://www.w3.org/2003/05/soap-envelope\" xmlns:a=\"http://schemas.xmlsoap.org/ws/2004/08/addressing\"><s:Header><a:Action s:mustUnderstand=\"1\">http://schemas.xmlsoap.org/ws/2005/04/discovery/Probe</a:Action><a:MessageID>uuid:21859bf9-6193-4c8a-ad50-d082e6d296ab</a:MessageID><a:ReplyTo><a:Address>http://schemas.xmlsoap.org/ws/2004/08/addressing/role/anonymous</a:Address></a:ReplyTo><a:To s:mustUnderstand=\"1\">urn:schemas-xmlsoap-org:ws:2005:04:discovery</a:To></s:Header><s:Body><Probe xmlns=\"http://schemas.xmlsoap.org/ws/2005/04/discovery\"><d:Types xmlns:d=\"http://schemas.xmlsoap.org/ws/2005/04/discovery\" xmlns:dp0=\"http://www.onvif.org/ver10/device/wsdl/GetServices\">dp0:NetworkVideoTransmitter</d:Types></Probe></s:Body></s:Envelope>";
 		
 	private static final String PROBE_IP = "239.255.255.250";
 	private static final int PROBE_PORT = 3702;
@@ -34,8 +58,14 @@ public abstract class OnvifDiscovery
 
 	}
 
+	
 	public ArrayList<DiscoveredCamera> probe()
 	{
+		
+		// System.out.println(getServices(true));
+
+
+
 		ArrayList<DiscoveredCamera> cameraList = new ArrayList<DiscoveredCamera>();
 		System.out.println("here 57druyftgv");
 		try
@@ -164,6 +194,7 @@ public abstract class OnvifDiscovery
 				{
 					URL localURL = new URL(urlString);
 					String urlHost = localURL.getHost();
+					System.out.println("urlhost"+urlHost);
 					//Make sure it's a valid local IPv4 address 
 					if(IpTranslator.isLocalIpv4(urlHost))
 					{
