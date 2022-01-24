@@ -21,7 +21,7 @@ import org.simpleframework.xml.stream.NodeBuilder;
 public abstract class OnvifDiscovery
 {
 	private static final int SOCKET_TIMEOUT = 4000;
-	private static final String PROBE_MESSAGE = "
+	private static final String PROBE_MESSAGE = """
 		<s:Envelope xmlns:s=\"http://www.w3.org/2003/05/soap-envelope\" xmlns:a=\"http://schemas.xmlsoap.org/ws/2004/08/addressing\">
 			<s:Header>
 				<a:Action s:mustUnderstand=\"1\">http://schemas.xmlsoap.org/ws/2005/04/discovery/Probe</a:Action>
@@ -35,7 +35,7 @@ public abstract class OnvifDiscovery
 					<d:Types xmlns:d=\"http://schemas.xmlsoap.org/ws/2005/04/discovery\" xmlns:dp0=\"http://www.onvif.org/ver10/device/wsdl/GetServices\">dp0:NetworkVideoTransmitter</d:Types>
 				</Probe>
 			</s:Body>
-		</s:Envelope>";
+		</s:Envelope>""";
 		
 	private static final String PROBE_IP = "239.255.255.250";
 	private static final int PROBE_PORT = 3702;
