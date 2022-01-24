@@ -1,7 +1,7 @@
 version: "3"
 services:
   discovery:
-    # network_mode: host
+    network_mode: host
     image: discovery
     # volumes: 
       # - ./:/usr/src/myapp
