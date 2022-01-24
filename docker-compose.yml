@@ -1,7 +1,7 @@
 version: "3"
 services:
   discovery:
-    # network_mode: host
+    network_mode: host
     image: discovery
     # platform: linux/amd64
     # volumes: 
@@ -19,5 +19,5 @@ services:
     command: java Main.java 
     # -Xlint:deprecation
     # /usr/src/myapp/lib/evercam-java-1.0-jar-with-dependencies
-    ports: 
-      - 3702:3702
+    # ports: 
+    #   - 3702:3702
